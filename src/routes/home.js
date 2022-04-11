@@ -3,9 +3,9 @@ const express = require('express');
 const homeRouter = express.Router();
 const {MongoClient} = require('mongodb');
 const {ObjectId} = require('mongodb');
+const db = require('../../tools/db.js');
 
-const uri = "mongodb+srv://admin:CLJ2XTpH614GR3WF@bingotime.brpff.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-const client = new MongoClient(uri);
+const client = new MongoClient(db.uri);
 
 async function getBoard(UserId, GameName){
     await client.connect();
