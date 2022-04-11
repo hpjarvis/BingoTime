@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo Time!</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comforter&family=Montserrat+Alternates:wght@200&family=Montserrat:wght@200&family=Roboto+Condensed:wght@300&family=Source+Sans+Pro:wght@400;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Hello Admin</h1>
+
+    <h3>Boards Overview</h3>
+    <table id = "AdminBoardTable">
+        <th>Board Name</th>
+        <th>No. Players</th>
+        <th>Details</th>
+        <% Object.keys(playerNumbers).forEach(element => { %>
+            <tr>
+                <td class="admin_board_row"><%- element %></li>
+                <td><%- playerNumbers[element]%></td>
+                <td><a href= <%= `/admin/${element}`%>>View</a></td>
+            </tr>
+        <% }) %>
+    </table>
+    <br>
+
+    <a href="#popup"><button>Create New Board</button></a>
+
+    <div id="popup" class="overlay">
+        <div class="popup">
+            <h1>Create a New Bingo Board</h1>
+            <div class="content">
+                <label>Enter Something</label>
+                <input type="text" name="" id="">
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
